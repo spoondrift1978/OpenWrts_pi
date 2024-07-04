@@ -1,71 +1,6 @@
 # Action Openwrt 云自动编译
 ⏰ **每周自动拉取最新源码自动编译**
 
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
-
-<br />
-
-<p align="center">
-  <a href="https://github.com/bigbugcc/OpenWrts">
-    <img src="./assets/images/action1.jpg" alt="Logo" width="500" />
-  </a>
-  <h3 align="center">Openwrt/LEDE 云编译(带应用商店)</h3>
-  <p align="center">
-    👉 每周定时自动拉取Openwrt最新源码编译，自动发布到 [<a herf="https://github.com/bigbugcc/OpenWrts/releases"> Releases </a>]👈
-    <br />
-    <a href="https://github.com/bigbugcc/OpenWrts"><strong>探索本项目的文档 »</strong></a>
-    <br />
-    <br />
-    <a href="https://github.com/bigbugcc/OpenWrts/releases">下载地址</a>
-    ·
-    <a href="https://github.com/bigbugcc/OpenWrts/actions">Action</a>
-    ·
-    <a href="https://github.com/bigbugcc/OpenWrts/issues">提出新特性</a>
-  </p>
-
-</p>
-
-## 目录
-
-- [Action Openwrt 云自动编译](#action-openwrt-云自动编译)
-  - [目录](#目录)
-  - [支持的设备](#支持的设备)
-    - [🎯固件默认设置](#固件默认设置)
-  - [固件特性](#固件特性)
-  - [自带插件](#自带插件)
-  - [文件目录说明](#文件目录说明)
-  - [定制固件](#定制固件)
-    - [注意事项](#注意事项)
-  - [固件预览](#固件预览)
-  - [版权说明](#版权说明)
-  - [项目支持](#项目支持)
-  - [Stargazers over time](#stargazers-over-time)
-
-<br>
-
-
-## 支持的设备
-🎯 带应用商店的固件：`x86Lite`
-|           支持的设备        |         固类别         |        Action         |            状态          |              下载页          |
-| :------------------------: | :---------------------: | :-------------------: | :-------------------: | :--------------------------: |
-|             x86_64                    |  [LEDE](https://github.com/coolsnowwolf/lede) |[🍕](https://github.com/bigbugcc/OpenWrts/actions/workflows/x86_64.yml) | ![x86_64](https://github.com/bigbugcc/openwrts/actions/workflows/x86_64.yml/badge.svg) |  [✔](https://github.com/bigbugcc/OpenWrts/releases) |
-| x86_64Lite | [LEDE](https://github.com/coolsnowwolf/lede) |[🍕](https://github.com/bigbugcc/OpenWrts/actions/workflows/x86_64Lite.yml) | ![x86_64Lite](https://github.com/bigbugcc/openwrts/actions/workflows/x86_64Lite.yml/badge.svg) | [✔](https://github.com/bigbugcc/OpenWrts/releases) |
-|             树莓派 3B/3B+             | [LEDE](https://github.com/coolsnowwolf/lede) | [🍕](https://github.com/bigbugcc/OpenWrts/actions/workflows/RaspberryPi3.yml) | ![RaspberryPi3](https://github.com/bigbugcc/openwrts/actions/workflows/RaspberryPi3.yml/badge.svg) | [✔](https://github.com/bigbugcc/OpenWrts/releases) |
-|             树莓派 4B             |  [LEDE](https://github.com/coolsnowwolf/lede) | [🍕](https://github.com/bigbugcc/OpenWrts/actions/workflows/RaspberryPi4.yml) | ![RaspberryPi4](https://github.com/bigbugcc/openwrts/actions/workflows/RaspberryPi4.yml/badge.svg) |  [✔](https://github.com/bigbugcc/OpenWrts/releases) |
-|             树莓派 5             |  [LEDE](https://github.com/coolsnowwolf/lede) | [🍕](https://github.com/bigbugcc/OpenWrts/actions/workflows/RaspberryPi5.yml) | ![RaspberryPi5](https://github.com/bigbugcc/openwrts/actions/workflows/RaspberryPi5.yml/badge.svg) |  [✔](https://github.com/bigbugcc/OpenWrts/releases) |
-|             NanoPi R2S             |  [LEDE](https://github.com/coolsnowwolf/lede) | [🍕](https://github.com/bigbugcc/OpenWrts/actions/workflows/Rockchip_armv8.yml) | ![R2S](https://github.com/bigbugcc/openwrts/actions/workflows/Rockchip_armv8.yml/badge.svg) | [✔](https://github.com/bigbugcc/OpenWrts/releases) |
-|             NanoPi R4S             |  [LEDE](https://github.com/coolsnowwolf/lede) | [🍕](https://github.com/bigbugcc/OpenWrts/actions/workflows/Rockchip_armv8.yml) | ![R4S](https://github.com/bigbugcc/openwrts/actions/workflows/Rockchip_armv8.yml/badge.svg) | [✔](https://github.com/bigbugcc/OpenWrts/releases) |
-|             NanoPi R5C             |  [LEDE](https://github.com/coolsnowwolf/lede) | [🍕](https://github.com/bigbugcc/OpenWrts/actions/workflows/Rockchip_armv8.yml) | ![R5C](https://github.com/bigbugcc/openwrts/actions/workflows/Rockchip_armv8.yml/badge.svg) | [✔](https://github.com/bigbugcc/OpenWrts/releases) |
-|             NanoPi R5S             |  [LEDE](https://github.com/coolsnowwolf/lede) | [🍕](https://github.com/bigbugcc/OpenWrts/actions/workflows/Rockchip_armv8.yml) | ![R5S](https://github.com/bigbugcc/openwrts/actions/workflows/Rockchip_armv8.yml/badge.svg) | [✔](https://github.com/bigbugcc/OpenWrts/releases) |
-|             FastRhino R68S             |  [LEDE](https://github.com/coolsnowwolf/lede) | [🍕](https://github.com/bigbugcc/OpenWrts/actions/workflows/Rockchip_armv8.yml) | ![R68S](https://github.com/bigbugcc/openwrts/actions/workflows/Rockchip_armv8.yml/badge.svg) | [✔](https://github.com/bigbugcc/OpenWrts/releases) |
-|             Orange Pi R1 Plus             |  [LEDE](https://github.com/coolsnowwolf/lede) | [🍕](https://github.com/bigbugcc/OpenWrts/actions/workflows/Rockchip_armv8.yml) | ![OrangePiR1](https://github.com/bigbugcc/openwrts/actions/workflows/Rockchip_armv8.yml/badge.svg) | [✔](https://github.com/bigbugcc/OpenWrts/releases) |
-
-<br>
-
 ### 🎯固件默认设置
 - 路由器地址: `192.168.10.1`
 - 默认用户名: `root`
@@ -82,19 +17,8 @@
 
 ✨ Arm集成所有openwrt的USB驱动
 
-✨ ~~集成Python3.x(带pip)环境~~
-
-✨ 集成Docker-CE
-
-✨ ~~集成Node.js(14.xLTS 带npm、yarn)~~
-
 ✨ 全新的 [Them](https://github.com/jerrykuku/luci-theme-argon)
 
-✨ x86_64 vmdk固件集成vm-tools
-
-✨ x86_64 iso格式镜像
-
-✨ x86_64 Lite版本(必要插件&应用商店)
 
 <br>
 
@@ -175,30 +99,6 @@ LuciApp.conf / LuciApp_Lite.conf - 主要用于配置固件插件应用
 
 <br>
 
-## 固件预览
-**主界面(主题一)：**
-![主界面](./assets/images/openwrt.png)
-
-**应用商店/插件**
-![应用商店/插件](./assets/images/appstore.png)
-
-**服务/插件：**
-![服务/插件](./assets/images/service.png)
-
-**网络：**
-![网络](./assets/images/network.png)
-
-**经典主题二：**
-![登录页](./assets/images/infinityfreedom-theme.png)
-
-**主界面：**
-![主界面](./assets/images/infinityfreedom-theme-main.png)
-
-
-## 版权说明
-
-该项目签署了MIT 授权许可，详情请参阅 [LICENSE](https://github.com/bigbugcc/OpenWrts/blob/main/LICENSE)
-
 
 ## 项目支持
 - [P3TERX/Actions-OpenWrt](https://github.com/P3TERX/Actions-OpenWrt)
@@ -206,18 +106,3 @@ LuciApp.conf / LuciApp_Lite.conf - 主要用于配置固件插件应用
 - [luci-theme-argon](https://github.com/jerrykuku/luci-theme-argon)
 - [istore](https://github.com/linkease/istore)
 
-## Stargazers over time
-[![Stargazers over time](https://starchart.cc/bigbugcc/OpenWrts.svg)](https://starchart.cc/bigbugcc/OpenWrts)
-
-<!-- links -->
-[your-project-path]:https://github.com/bigbugcc/OpenWrts/
-[contributors-shield]: https://img.shields.io/github/contributors/bigbugcc/OpenWrts?style=flat-square
-[contributors-url]: https://github.com/bigbugcc/OpenWrts/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/bigbugcc/OpenWrts?style=flat-square
-[forks-url]: https://github.com/bigbugcc/OpenWrts/network/members
-[stars-shield]: https://img.shields.io/github/stars/bigbugcc/OpenWrts?style=flat-square
-[stars-url]: https://github.com/bigbugcc/OpenWrts/stargazers
-[issues-shield]: https://img.shields.io/github/issues/bigbugcc/OpenWrts?style=flat-square
-[issues-url]: https://img.shields.io/github/issues/bigbugcc/OpenWrts
-[license-shield]: https://img.shields.io/github/license/bigbugcc/OpenWrts?style=flat-square
-[license-url]: https://github.com/bigbugcc/OpenWrts/blob/master/LICENSE
