@@ -8,7 +8,7 @@ git clone  https://github.com/zzsj0928/luci-app-pushbot package/otherapp/luci-ap
 git clone https://github.com/thinktip/luci-theme-neobird.git package/otherapp/luci-theme-neobird
 
 # Mentohust
-git clone https://github.com/KyleRicardo/MentoHUST-OpenWrt-ipk.git package/otherapp/mentohust
+# git clone https://github.com/KyleRicardo/MentoHUST-OpenWrt-ipk.git package/otherapp/mentohust
 
 # UnblockNeteaseMusic
 git clone -b master  https://github.com/UnblockNeteaseMusic/luci-app-unblockneteasemusic.git package/unblockneteasemusic
